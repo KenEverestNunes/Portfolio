@@ -101,3 +101,13 @@
     text-align: justify;
   }
 }
+
+/* Add this inside the max-width: 600px block */
+  form {
+    width: 90%; /* Wider on mobile */
+  }
+  
+  #contact {
+    height: fit-content; /* Allow section to grow to fit the form */
+    padding-bottom: 4rem;
+  }

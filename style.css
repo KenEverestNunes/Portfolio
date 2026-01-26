@@ -430,3 +430,306 @@ footer {
 footer p {
   text-align: center;
 }
+
+/* BACK TO TOP BUTTON - CIRCULAR VERSION */
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99;
+  
+  /* SHAPE & SIZE */
+  width: 50px;        /* Fixed width */
+  height: 50px;       /* Fixed height to match width */
+  border-radius: 50%; /* Makes it a perfect circle */
+  padding: 0;         /* Remove padding so size is controlled by width/height */
+  
+  /* CENTERING THE ARROW */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;  /* Size of the arrow icon */
+
+  /* COLORS & THEME */
+  border: rgb(53, 53, 53) 0.1rem solid;
+  outline: none;
+  background-color: rgb(53, 53, 53);
+  color: white;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+#backToTopBtn:hover {
+  background-color: black;
+  border-color: black;
+  transform: scale(1.1); /* Adds a subtle "pop" effect when you hover */
+}
+
+/* CONTACT FORM */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 40%; /* Keeps it elegant on desktop */
+}
+
+.contact-input {
+  width: 50%;        /* Your custom width */
+  display: block;    /* Ensures the input behaves as a block element */
+  margin: 0 auto;    /* Centers the element horizontally */
+  
+  /* Keep your existing styling below */
+  padding: 1rem;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  background: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 300ms ease;
+}
+
+.textarea-input {
+  resize: none; /* Prevents resizing that breaks layout */
+  border-radius: 2rem; 
+}
+
+/* HOVER & FOCUS EFFECTS */
+.contact-input:focus {
+  border-color: black;
+  transform: scale(1.02); /* Subtle pop effect like your buttons */
+}
+
+/* VALIDATION UI STATES */
+.contact-input:valid {
+  border-color: rgb(53, 53, 53);
+}
+
+.contact-input:invalid:not(:placeholder-shown) {
+  border-color: red; /* Visual cue for errors */
+}
+
+/* DARK MODE TOGGLE BUTTON STYLES */
+#theme-btn, #theme-btn-mobile {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  user-select: none; /* Prevents highlighting the icon */
+}
+
+#theme-btn:hover, #theme-btn-mobile:hover {
+  transform: scale(1.2);
+}
+
+/* DARK MODE COLORS */
+/* This class is added to the <body> by JavaScript */
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/* RE-COLORING TEXT FOR DARK MODE */
+body.dark-mode a, 
+body.dark-mode .title, 
+body.dark-mode .section__text__p1,
+body.dark-mode .experience-sub-title,
+body.dark-mode .project-title,
+body.dark-mode .nav-links li a {
+  color: white;
+}
+
+body.dark-mode p, 
+body.dark-mode .section__text__p2 {
+  color: rgb(180, 180, 180); /* Softer white for reading text */
+}
+
+/* HANDLING BUTTONS IN DARK MODE */
+body.dark-mode .btn-color-2 {
+  border-color: white;
+  color: white;
+}
+body.dark-mode .btn-color-2:hover {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode .btn-color-1 {
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+body.dark-mode .btn-color-1:hover {
+  background-color: rgb(200, 200, 200); /* Light grey hover */
+}
+
+/* UPDATING CONTAINERS (Cards) */
+body.dark-mode .details-container,
+body.dark-mode .color-container,
+body.dark-mode .contact-info-upper-container {
+  background: rgb(20, 20, 20); /* Very dark grey instead of white */
+  border-color: white;
+}
+
+/* CONTACT FORM INPUTS */
+body.dark-mode .contact-input {
+  background: rgb(30, 30, 30);
+  color: white;
+  border-color: white;
+}
+body.dark-mode .contact-input::placeholder {
+  color: rgb(150, 150, 150);
+}
+
+/* BACK TO TOP BUTTON */
+body.dark-mode #backToTopBtn {
+  background-color: white; /* Invert to white */
+  color: black;
+  border-color: white;
+}
+
+/* HAMBURGER MENU */
+body.dark-mode .menu-links {
+  background-color: #222; /* Dark menu background */
+}
+body.dark-mode .hamburger-icon span {
+  background-color: white;
+}
+
+/* --- THE MAGIC TRICK FOR ICONS --- */
+/* This inverts your black PNG icons (GitHub, LinkedIn, Checkmarks) to white */
+body.dark-mode .icon {
+  filter: invert(1); 
+}
+
+/* Exception: Don't invert the profile picture! */
+body.dark-mode .section__pic-container img,
+body.dark-mode .about-pic {
+  filter: none; 
+}
+
+/* EXPERIENCE TABS LAYOUT */
+#work-experience {
+  margin: 0 10rem; /* Matches your other sections */
+  margin-bottom: 4rem;
+}
+
+.experience-container {
+  display: flex;
+  gap: 4rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  min-height: 300px; /* Prevents jumping when content size changes */
+}
+
+/* LEFT COLUMN: TAB BUTTONS */
+.tab-list {
+  display: flex;
+  flex-direction: column;
+  width: 25%; /* Keeps the menu compact */
+  border-left: 2px solid rgb(230, 230, 230); /* The subtle gray line */
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent; /* Invisible border for inactive state */
+  text-align: left;
+  padding: 1rem 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: rgb(85, 85, 85);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: -2px; /* Pulls button over the grey line */
+}
+
+.tab-btn:hover {
+  background-color: rgb(245, 245, 245);
+  color: black;
+}
+
+.tab-btn.active {
+  color: black;
+  border-left: 3px solid rgb(53, 53, 53); /* Active Highlighting */
+  background-color: transparent; /* Clean look */
+  font-weight: 600;
+}
+
+/* RIGHT COLUMN: CONTENT */
+.tab-content-wrapper {
+  width: 75%;
+}
+
+.tab-content {
+  display: none; /* Hidden by default */
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active-content {
+  display: block; /* Show only the active one */
+}
+
+/* TEXT STYLING */
+.job-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.company-highlight {
+  color: rgb(53, 53, 53); /* Theme color */
+}
+
+.job-date {
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif; /* Monospace looks cool for dates, or stick to Poppins */
+  margin-bottom: 1.5rem;
+  color: rgb(100, 100, 100);
+}
+
+.job-description {
+  list-style: none;
+}
+
+.job-description li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: rgb(85, 85, 85);
+  line-height: 1.6;
+}
+
+/* Custom Bullet Points (Arrows) */
+.job-description li::before {
+  content: "▹"; /* Cool geometric arrow */
+  position: absolute;
+  left: 0;
+  color: rgb(53, 53, 53);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* DARK MODE FIXES */
+body.dark-mode .tab-btn { color: rgb(160, 160, 160); }
+body.dark-mode .tab-btn:hover { background-color: rgb(30, 30, 30); color: white; }
+body.dark-mode .tab-btn.active { color: white; border-left-color: white; }
+body.dark-mode .tab-list { border-left-color: rgb(50, 50, 50); }
+body.dark-mode .company-highlight { color: white; }
+body.dark-mode .job-date { color: rgb(180, 180, 180); }
+body.dark-mode .job-description li { color: rgb(200, 200, 200); }
+body.dark-mode .job-description li::before { color: white; }
+
+

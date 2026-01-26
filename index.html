@@ -17,6 +17,10 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li>
+            <div id="theme-btn" onclick="toggleMode()">
+              &#9728; </div>
+          </li>
         </ul>
       </div>
     </nav>
@@ -33,6 +37,11 @@
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <div id="theme-btn-mobile" onclick="toggleMode()">
+              &#9728;
+            </div>
+          </li>
         </div>
       </div>
     </nav>
@@ -93,7 +102,7 @@
                 alt="Experience icon"
                 class="icon"
               />
-              <h3>Experience</h3>
+              <h3>Skills</h3>
               <p>1+ year <br />Full Stack Development</p>
             </div>
             <div class="details-container">
@@ -114,9 +123,56 @@
         </div>
       </div>
     </section>
+    <section id="work-experience">
+  <p class="section__text__p1">My Professional Journey</p>
+  <h1 class="title">Work Experience</h1>
+
+  <div class="experience-container">
+    <div class="tab-list">
+      <button 
+        class="tab-btn active" 
+        onclick="openTab(event, 'Amazon')">
+        Amazon.com Services LLC
+      </button>
+      <button 
+        class="tab-btn" 
+        onclick="openTab(event, 'Rajkamal')">
+        Rajkamal Barscan Systems Pvt Ltd
+      </button>
+    </div>
+
+    <div class="tab-content-wrapper">
+      
+      <div id="Amazon" class="tab-content active-content">
+        <div class="job-header">
+          <h3>SDE 1 Intern <span class="company-highlight">@ Amazon.com Services LLC</span></h3>
+          <p class="job-date">Jun 2025 - Oct 2025</p>
+        </div>
+        <ul class="job-description">
+          <li>Led the development of an AI-based Ticket Resolution Helper Tool, reducing the team's operational workload by 31% through intelligent automation.</li>
+          <li>Integrated Amazon Bedrock Agent with multiple internal tools to enable automated data retrieval and ticket resolution.</li>
+          <li>Designed and deployed a single-agent model, achieving performance comparable to multi-agent architecture while cutting infrastructure costs by ~50%.</li>
+        </ul>
+      </div>
+
+      <div id="Rajkamal" class="tab-content">
+        <div class="job-header">
+          <h3>Software Developer <span class="company-highlight">@ Rajkamal Barscan Systems Pvt Ltd</span></h3>
+          <p class="job-date">Jun 2023 - Jun 2024</p>
+        </div>
+        <ul class="job-description">
+          <li>Managed end-to-end development of a dynamic website, resulting in a 30% increase in user engagement by optimizing front-end rendering.</li>
+          <li>Directed the design and deployment of an internal user portal that optimized content control and workflow using role-based access.</li>
+          <li>Collaborated with cross-functional teams to troubleshoot and solve integration issues using React.js, Node.js, and Tailwind CSS.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h1 class="title">Skills</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
@@ -234,7 +290,7 @@
                 />
                 <div>
                   <h3>Git</h3>
-                  <p>Intermediate</p>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
@@ -370,27 +426,71 @@
       </div>
     </section>
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:kennunes77@gmail.com">kennunes77@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/ken-nunes-5694241a3/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
+  <p class="section__text__p1">Get in Touch</p>
+  <h1 class="title">Contact Me</h1>
+
+  <div class="contact-form-container">
+  <form action="https://formspree.io/f/xjgwypnq" method="POST">
+    
+    <div class="form-group">
+      <input 
+        type="text" 
+        name="name" 
+        id="name" 
+        placeholder="Your Name" 
+        class="contact-input" 
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <input 
+        type="email" 
+        name="email" 
+        id="email" 
+        placeholder="Your Email" 
+        class="contact-input" 
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <textarea 
+        name="message" 
+        id="message" 
+        placeholder="Your Message" 
+        class="contact-input textarea-input" 
+        rows="5" 
+        required
+      ></textarea>
+    </div>
+
+    <div class="btn-container">
+      <button type="submit" class="btn btn-color-2">Send Message</button>
+    </div>
+  </form>
+</div>
+  <div class="contact-info-upper-container">
+    <div class="contact-info-container">
+      <img
+        src="./assets/email.png"
+        alt="Email icon"
+        class="icon contact-icon email-icon"
+      />
+      <p><a href="mailto:kennunes77@gmail.com">kennunes77@gmail.com</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img
+        src="./assets/linkedin.png"
+        alt="LinkedIn icon"
+        class="icon contact-icon"
+      />
+      <p><a href="https://www.linkedin.com/in/ken-nunes-5694241a3/">LinkedIn</a></p>
+    </div>
+  </div>
+</section>
+    <button id="backToTopBtn" onclick="scrollToTop()" title="Go to top">
+  &#8679; </button>
     <footer>
       <nav>
         <div class="nav-links-container">
@@ -402,8 +502,9 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2025 Ken. All Rights Reserved.</p>
+      <p>Copyright &#169; 2026 Ken. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    
   </body>
 </html>

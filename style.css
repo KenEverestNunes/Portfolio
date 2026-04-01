@@ -674,4 +674,21 @@ body.dark-mode .job-date { color: rgb(180, 180, 180); }
 body.dark-mode .job-description li { color: rgb(200, 200, 200); }
 body.dark-mode .job-description li::before { color: white; }
 
+/* Update the article container specifically for project cards */
+.color-container .article-container {
+  height: 300px; /* Forces both project containers to be the same height */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure the image fills the container without distortion */
+.project-img {
+  border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is key: it crops the image to fill the box instead of stretching it */
+}
+
 

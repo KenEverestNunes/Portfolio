@@ -192,6 +192,69 @@ section {
   height: 2rem;
 }
 
+/* =========================================================
+   Social Icons & Exact Brand Colors on Hover
+   ========================================================= */
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  color: black;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+body.dark-mode .social-icon {
+  color: white;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.18);
+}
+
+.icon-linkedin:hover {
+  color: #0A66C2 !important;
+  filter: drop-shadow(0 4px 10px rgba(10, 102, 194, 0.5));
+}
+
+.icon-github:hover {
+  color: #8957e5 !important;
+  filter: drop-shadow(0 4px 10px rgba(137, 87, 229, 0.5));
+}
+
+.icon-leetcode:hover {
+  color: #FFA116 !important;
+  filter: drop-shadow(0 4px 10px rgba(255, 161, 22, 0.5));
+}
+
+.icon-medium:hover {
+  color: #1A8917 !important;
+  filter: drop-shadow(0 4px 10px rgba(26, 137, 23, 0.5));
+}
+
+.icon-email:hover,
+.contact-info-container:hover .icon-email {
+  color: #EA4335 !important;
+  filter: drop-shadow(0 4px 10px rgba(234, 67, 53, 0.5));
+}
+
+.contact-info-container:hover .icon-linkedin {
+  color: #0A66C2 !important;
+  filter: drop-shadow(0 4px 10px rgba(10, 102, 194, 0.5));
+}
+
+.contact-info-container:hover .icon-leetcode {
+  color: #FFA116 !important;
+  filter: drop-shadow(0 4px 10px rgba(255, 161, 22, 0.5));
+}
+
+.contact-info-container:hover .icon-medium {
+  color: #1A8917 !important;
+  filter: drop-shadow(0 4px 10px rgba(26, 137, 23, 0.5));
+}
+
 
 .btn-container {
   display: flex;

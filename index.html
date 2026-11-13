@@ -71,13 +71,25 @@
             src="./assets/linkedin.png"
             alt="My LinkedIn profile"
             class="icon"
-            onclick="location.href='https://linkedin.com/'"
+            onclick="window.open('https://www.linkedin.com/in/ken-nunes-5694241a3/', '_blank')"
           />
           <img
             src="./assets/github.png"
             alt="My Github profile"
             class="icon"
-            onclick="location.href='https://github.com/KenEverestNunes'"
+            onclick="window.open('https://github.com/KenEverestNunes', '_blank')"
+          />
+          <img
+            src="./assets/leetcode.svg"
+            alt="My LeetCode profile"
+            class="icon"
+            onclick="window.open('https://leetcode.com/u/kennunes77/', '_blank')"
+          />
+          <img
+            src="./assets/medium.svg"
+            alt="My Medium profile"
+            class="icon"
+            onclick="window.open('https://medium.com/@kennunes77', '_blank')"
           />
         </div>
       </div>
@@ -111,7 +123,7 @@
                 class="icon"
               />
               <h3>Education</h3>
-              <p>B.E. Bachelors Degree<br />M.S. Masters Degree</p>
+              <p>M.S. Computer Science (CGPA: 3.91)<br />B.E. Computer Engineering</p>
             </div>
           </div>
           <div class="text-container">
@@ -326,50 +338,80 @@
         <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
+              <div class="project-preview-card">
+                <div class="preview-header">
+                  <div class="window-controls">
+                    <span class="control-dot dot-red"></span>
+                    <span class="control-dot dot-yellow"></span>
+                    <span class="control-dot dot-green"></span>
+                  </div>
+                  <span class="preview-title-badge">mcp-sentry.stdio</span>
+                  <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span>Live</span>
+                  </div>
+                </div>
+                <div class="terminal-stream">
+                  <p><span class="term-dim">$</span> <span class="term-cmd">mcp-server</span> <span class="term-cyan">--telemetry</span> sentry.io</p>
+                  <p class="term-purple">[MCP] Handshake active with AI Agent</p>
+                  <p class="term-green">[STREAM] Ingesting real-time incident traces...</p>
+                  <p class="term-warn">[ALERT] Latency spike detected in /api/worker</p>
+                  <p><span class="term-dim">&gt; Context synthesized for agent</span><span class="term-cursor"></span></p>
+                </div>
+              </div>
             </div>
-            <h2 class="experience-sub-title project-title">Sorting Visualizer</h2>
+            <h2 class="experience-sub-title project-title">MCP Sentry</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/KenEverestNunes/Sorting_Visualizer', '_blank','noopener,noreferrer')"
+                onclick="window.open('https://github.com/KenEverestNunes/mcp-sentry', '_blank','noopener,noreferrer')"
               >
                 Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://keneverestnunes.github.io/Sorting_Visualizer/', '_blank','noopener,noreferrer')"
-              >
-                Live Demo
               </button>
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <img
-                src="./assets/voice_assistant.png"
-                alt="Project 2"
-                class="project-img"
-              />
+              <div class="project-preview-card">
+                <div class="preview-header">
+                  <div class="window-controls">
+                    <span class="control-dot dot-red"></span>
+                    <span class="control-dot dot-yellow"></span>
+                    <span class="control-dot dot-green"></span>
+                  </div>
+                  <span class="preview-title-badge">git-pr-predictor</span>
+                  <div class="diff-stat">
+                    <span class="added">+184</span> <span class="removed">-29</span>
+                  </div>
+                </div>
+                <div class="terminal-stream">
+                  <div class="pr-header-row">
+                    <span class="pr-tag">&#9673; PR #42 Open</span>
+                    <span class="term-dim">feat/async-pipeline</span>
+                  </div>
+                  <div class="friction-meter-box">
+                    <div class="friction-label-row">
+                      <span>Predicted Merge Friction</span>
+                      <span class="friction-score-text">Low (18%)</span>
+                    </div>
+                    <div class="friction-bar-track">
+                      <div class="friction-bar-fill"></div>
+                    </div>
+                  </div>
+                  <div class="pr-checks-row">
+                    <span class="pr-check-pill">&#10003; Zero API Breaking Changes</span>
+                    <span class="pr-check-pill">&#9889; Review: ~1.2 hrs</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h2 class="experience-sub-title project-title">Voice Controlled Personal Assistant
-            </h2>
+            <h2 class="experience-sub-title project-title">AI PR Friction Predictor</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/KenEverestNunes/AI-for-patient-scheduling', '_blank','noopener,noreferrer')"
+                onclick="window.open('https://github.com/KenEverestNunes/AI-PR-Friction-Predictor', '_blank','noopener,noreferrer')"
               >
                 Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://muzzy-braden-civilly.ngrok-free.dev/', '_blank','noopener,noreferrer')"
-              >
-                Live Demo
               </button>
             </div>
           </div>
@@ -436,7 +478,23 @@
         alt="LinkedIn icon"
         class="icon contact-icon"
       />
-      <p><a href="https://www.linkedin.com/in/ken-nunes-5694241a3/">LinkedIn</a></p>
+      <p><a href="https://www.linkedin.com/in/ken-nunes-5694241a3/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img
+        src="./assets/leetcode.svg"
+        alt="LeetCode icon"
+        class="icon contact-icon"
+      />
+      <p><a href="https://leetcode.com/u/kennunes77/" target="_blank" rel="noopener noreferrer">LeetCode</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img
+        src="./assets/medium.svg"
+        alt="Medium icon"
+        class="icon contact-icon"
+      />
+      <p><a href="https://medium.com/@kennunes77" target="_blank" rel="noopener noreferrer">Medium</a></p>
     </div>
   </div>
 </section>

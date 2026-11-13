@@ -45,12 +45,13 @@ a {
   color: black;
   text-decoration: none;
   text-decoration-color: white;
+  transition: all 250ms ease;
 }
 
 a:hover {
   color: grey;
   text-decoration: underline;
-  text-underline-offset: 1rem;
+  text-underline-offset: 0.5rem;
   text-decoration-color: rgb(181, 181, 181);
 }
 
@@ -192,6 +193,53 @@ section {
   height: 2rem;
 }
 
+/* =========================================================
+   Social Icons & Exact Brand Colors on Hover
+   ========================================================= */
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  color: black;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+body.dark-mode .social-icon {
+  color: white;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.icon-linkedin:hover {
+  color: #0A66C2 !important;
+  filter: drop-shadow(0 4px 10px rgba(10, 102, 194, 0.5));
+}
+
+.icon-github:hover {
+  color: #8957e5 !important;
+  filter: drop-shadow(0 4px 10px rgba(137, 87, 229, 0.5));
+}
+
+.icon-leetcode:hover {
+  color: #FFA116 !important;
+  filter: drop-shadow(0 4px 10px rgba(255, 161, 22, 0.5));
+}
+
+.icon-medium:hover {
+  color: #1A8917 !important;
+  filter: drop-shadow(0 4px 10px rgba(26, 137, 23, 0.5));
+}
+
+.icon-email:hover {
+  color: #EA4335 !important;
+  filter: drop-shadow(0 4px 10px rgba(234, 67, 53, 0.5));
+}
+
 
 .btn-container {
   display: flex;
@@ -201,10 +249,16 @@ section {
 
 .btn {
   font-weight: 600;
-  transition: all 300ms ease;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .btn-color-1,
@@ -212,27 +266,28 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
 }
 
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
+/* Contact Info Button (Default Dark, White on Hover) */
+.btn-color-1 {
   background: rgb(53, 53, 53);
   color: white;
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: white;
+  color: black;
+  border-color: rgb(53, 53, 53);
 }
 
+/* Download CV / Project Buttons (Default Outlined, Dark on Hover) */
 .btn-color-2 {
-  background: none;
+  background: transparent;
+  color: black;
 }
 
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  background: rgb(53, 53, 53);
+  color: white;
+  border-color: rgb(53, 53, 53);
 }
 
 #about {
@@ -359,10 +414,11 @@ article .icon {
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  background: rgb(250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -373,10 +429,57 @@ article .icon {
   justify-content: center;
   gap: 0.5rem;
   margin: 1rem;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.contact-info-container:hover {
+  transform: translateY(-3px);
 }
 
 .contact-info-container p {
   font-size: larger;
+  transition: all 250ms ease;
+}
+
+.contact-info-container a {
+  transition: all 250ms ease;
+}
+
+.contact-info-container:hover .icon-email,
+.contact-info-container:hover a[href^="mailto"] {
+  color: #EA4335 !important;
+  text-decoration-color: #EA4335;
+}
+.contact-info-container:hover .icon-email {
+  filter: drop-shadow(0 4px 10px rgba(234, 67, 53, 0.4));
+}
+
+.contact-info-container:hover .icon-linkedin,
+.contact-info-container:hover a[href*="linkedin"] {
+  color: #0A66C2 !important;
+  text-decoration-color: #0A66C2;
+}
+.contact-info-container:hover .icon-linkedin {
+  filter: drop-shadow(0 4px 10px rgba(10, 102, 194, 0.4));
+}
+
+.contact-info-container:hover .icon-leetcode,
+.contact-info-container:hover a[href*="leetcode"] {
+  color: #FFA116 !important;
+  text-decoration-color: #FFA116;
+}
+.contact-info-container:hover .icon-leetcode {
+  filter: drop-shadow(0 4px 10px rgba(255, 161, 22, 0.4));
+}
+
+.contact-info-container:hover .icon-medium,
+.contact-info-container:hover a[href*="medium"] {
+  color: #1A8917 !important;
+  text-decoration-color: #1A8917;
+}
+.contact-info-container:hover .icon-medium {
+  filter: drop-shadow(0 4px 10px rgba(26, 137, 23, 0.4));
 }
 
 .contact-icon {
@@ -509,6 +612,10 @@ body.dark-mode .section__text__p2 {
   color: rgb(180, 180, 180); 
 }
 
+body.dark-mode .btn:hover {
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
+}
+
 body.dark-mode .btn-color-2 {
   border-color: white;
   color: white;
@@ -524,7 +631,9 @@ body.dark-mode .btn-color-1 {
   border-color: white;
 }
 body.dark-mode .btn-color-1:hover {
-  background-color: rgb(200, 200, 200);
+  background-color: transparent;
+  color: white;
+  border-color: white;
 }
 
 body.dark-mode .details-container,
@@ -532,6 +641,11 @@ body.dark-mode .color-container,
 body.dark-mode .contact-info-upper-container {
   background: rgb(20, 20, 20); 
   border-color: white;
+}
+
+body.dark-mode .project-preview-card {
+  background: #090d16;
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 body.dark-mode .contact-input {
@@ -676,11 +790,12 @@ body.dark-mode .job-description li::before { color: white; }
 
 /* Update the article container specifically for project cards */
 .color-container .article-container {
-  height: 300px; /* Forces both project containers to be the same height */
+  height: 300px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 /* Ensure the image fills the container without distortion */
@@ -688,7 +803,373 @@ body.dark-mode .job-description li::before { color: white; }
   border-radius: 2rem;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This is key: it crops the image to fill the box instead of stretching it */
+  object-fit: cover;
+}
+
+/* =========================================================
+   Interactive Project Preview Components (No Fake Images)
+   ========================================================= */
+
+.project-preview-card {
+  width: 92%;
+  height: 90%;
+  background: #0d1117;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-preview-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.8), transparent);
+  transition: all 0.5s ease;
+}
+
+.project-preview-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 16px 36px rgba(56, 189, 248, 0.15), 0 0 20px rgba(56, 189, 248, 0.08);
+}
+
+.project-preview-card:hover::before {
+  left: 100%;
+}
+
+/* Top Window Header */
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.control-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.preview-title-badge {
+  font-size: 0.75rem;
+  color: #8b949e;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: #4ade80;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: rgba(74, 222, 128, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulseBeacon 2s infinite ease-in-out;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* =========================================================
+   Minimalist Visual Project Components (Fewer Words, More Visual)
+   ========================================================= */
+
+.project-visual-canvas {
+  width: 92%;
+  height: 90%;
+  background: #0d1117;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1rem 1.2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-mode .project-visual-canvas {
+  background: #090d16;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.project-visual-canvas:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 16px 36px rgba(56, 189, 248, 0.16);
+}
+
+/* Header */
+.visual-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.5rem;
+}
+
+.visual-badge {
+  font-size: 0.72rem;
+  color: #8b949e;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* MCP Visual Flow */
+.mcp-visual-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto 0;
+  padding: 0.5rem 0;
+}
+
+.flow-node-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.project-visual-canvas:hover .flow-node-box {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.flow-node-icon {
+  width: 22px;
+  height: 22px;
+  color: #38bdf8;
+  display: inline-block;
+}
+
+.flow-node-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e6edf3;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.flow-wire {
+  position: relative;
+  width: 44px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.flow-packet {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: packetMove 2s infinite ease-in-out;
+}
+
+.flow-packet-reverse {
+  animation: packetMoveReverse 2s infinite ease-in-out;
+  background: #c084fc;
+  box-shadow: 0 0 10px #c084fc;
+}
+
+@keyframes packetMove {
+  0% { left: 0%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes packetMoveReverse {
+  0% { left: 100%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: 0%; opacity: 0; }
+}
+
+/* Animated Sparkline Wave */
+.telemetry-wave-container {
+  height: 32px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.telemetry-wave-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.wave-path {
+  fill: none;
+  stroke: #38bdf8;
+  stroke-width: 2;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+  animation: waveDash 3.5s linear infinite;
+}
+
+@keyframes waveDash {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* PR Radial Gauge Visual */
+.gauge-visual-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: auto 0;
+}
+
+.gauge-circle-wrap {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gauge-bg-ring {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 7;
+}
+
+.gauge-fill-ring {
+  fill: none;
+  stroke: #3fb950;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 180;
+  filter: drop-shadow(0 0 6px rgba(63, 185, 80, 0.5));
+  animation: gaugePulse 3s infinite ease-in-out;
+}
+
+@keyframes gaugePulse {
+  0%, 100% { stroke-dashoffset: 180; }
+  50% { stroke-dashoffset: 172; }
+}
+
+.gauge-text-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gauge-big-num {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3fb950;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.gauge-sub-lbl {
+  font-size: 0.6rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Visual Git Branch Line */
+.git-branch-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.git-node-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: #c9d1d9;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.git-commit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3fb950;
+  box-shadow: 0 0 8px #3fb950;
+}
+
+.git-line-segment {
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.merge-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(63, 185, 80, 0.15);
+  border: 1px solid rgba(63, 185, 80, 0.35);
+  color: #3fb950;
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, monospace;
 }
 
 

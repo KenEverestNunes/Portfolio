@@ -358,25 +358,61 @@
         <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
-              <div class="project-preview-card">
-                <div class="preview-header">
+              <div class="project-visual-canvas">
+                <div class="visual-header">
                   <div class="window-controls">
                     <span class="control-dot dot-red"></span>
                     <span class="control-dot dot-yellow"></span>
                     <span class="control-dot dot-green"></span>
                   </div>
-                  <span class="preview-title-badge">mcp-sentry.stdio</span>
+                  <span class="visual-badge">mcp-bridge</span>
                   <div class="status-indicator">
                     <span class="pulse-dot"></span>
                     <span>Live</span>
                   </div>
                 </div>
-                <div class="terminal-stream">
-                  <p><span class="term-dim">$</span> <span class="term-cmd">mcp-server</span> <span class="term-cyan">--telemetry</span> sentry.io</p>
-                  <p class="term-purple">[MCP] Handshake active with AI Agent</p>
-                  <p class="term-green">[STREAM] Ingesting real-time incident traces...</p>
-                  <p class="term-warn">[ALERT] Latency spike detected in /api/worker</p>
-                  <p><span class="term-dim">&gt; Context synthesized for agent</span><span class="term-cursor"></span></p>
+
+                <div class="mcp-visual-flow">
+                  <div class="flow-node-box">
+                    <svg class="flow-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                      <circle cx="12" cy="5" r="2"></circle>
+                      <path d="M12 7v4"></path>
+                      <line x1="8" y1="16" x2="8" y2="16"></line>
+                      <line x1="16" y1="16" x2="16" y2="16"></line>
+                    </svg>
+                    <span class="flow-node-name">AI Agent</span>
+                  </div>
+
+                  <div class="flow-wire">
+                    <span class="flow-packet"></span>
+                  </div>
+
+                  <div class="flow-node-box">
+                    <svg class="flow-node-icon" style="color: #c084fc;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span class="flow-node-name">MCP</span>
+                  </div>
+
+                  <div class="flow-wire">
+                    <span class="flow-packet flow-packet-reverse"></span>
+                  </div>
+
+                  <div class="flow-node-box">
+                    <svg class="flow-node-icon" style="color: #f43f5e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span class="flow-node-name">Sentry</span>
+                  </div>
+                </div>
+
+                <div class="telemetry-wave-container">
+                  <svg class="telemetry-wave-svg" viewBox="0 0 200 30" preserveAspectRatio="none">
+                    <path class="wave-path" d="M0,15 Q25,5 50,15 T100,15 T150,22 T200,15"></path>
+                  </svg>
                 </div>
               </div>
             </div>
@@ -392,36 +428,49 @@
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <div class="project-preview-card">
-                <div class="preview-header">
+              <div class="project-visual-canvas">
+                <div class="visual-header">
                   <div class="window-controls">
                     <span class="control-dot dot-red"></span>
                     <span class="control-dot dot-yellow"></span>
                     <span class="control-dot dot-green"></span>
                   </div>
-                  <span class="preview-title-badge">git-pr-predictor</span>
+                  <span class="visual-badge">pr-analyzer</span>
                   <div class="diff-stat">
                     <span class="added">+184</span> <span class="removed">-29</span>
                   </div>
                 </div>
-                <div class="terminal-stream">
-                  <div class="pr-header-row">
-                    <span class="pr-tag">&#9673; PR #42 Open</span>
-                    <span class="term-dim">feat/async-pipeline</span>
-                  </div>
-                  <div class="friction-meter-box">
-                    <div class="friction-label-row">
-                      <span>Predicted Merge Friction</span>
-                      <span class="friction-score-text">Low (18%)</span>
-                    </div>
-                    <div class="friction-bar-track">
-                      <div class="friction-bar-fill"></div>
+
+                <div class="gauge-visual-center">
+                  <div class="gauge-circle-wrap">
+                    <svg class="gauge-svg" viewBox="0 0 80 80">
+                      <circle cx="40" cy="40" r="32" class="gauge-bg-ring"></circle>
+                      <circle cx="40" cy="40" r="32" class="gauge-fill-ring"></circle>
+                    </svg>
+                    <div class="gauge-text-center">
+                      <span class="gauge-big-num">18%</span>
+                      <span class="gauge-sub-lbl">Friction</span>
                     </div>
                   </div>
-                  <div class="pr-checks-row">
-                    <span class="pr-check-pill">&#10003; Zero API Breaking Changes</span>
-                    <span class="pr-check-pill">&#9889; Review: ~1.2 hrs</span>
+
+                  <div class="git-branch-visual">
+                    <div class="git-node-row">
+                      <span class="git-commit-dot"></span>
+                      <span class="git-line-segment"></span>
+                      <span class="git-commit-dot"></span>
+                      <span class="git-line-segment"></span>
+                      <span class="git-commit-dot"></span>
+                    </div>
+                    <div>
+                      <span class="merge-status-badge">&#10003; Ready to Merge</span>
+                    </div>
                   </div>
+                </div>
+
+                <div class="telemetry-wave-container">
+                  <svg class="telemetry-wave-svg" viewBox="0 0 200 30" preserveAspectRatio="none">
+                    <path class="wave-path" style="stroke: #3fb950;" d="M0,15 Q30,22 60,10 T120,18 T170,12 T200,15"></path>
+                  </svg>
                 </div>
               </div>
             </div>

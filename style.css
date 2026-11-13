@@ -907,135 +907,269 @@ body.dark-mode .job-description li::before { color: white; }
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-/* Terminal Feed */
-.terminal-stream {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.78rem;
-  line-height: 1.5;
-  color: #c9d1d9;
+/* =========================================================
+   Minimalist Visual Project Components (Fewer Words, More Visual)
+   ========================================================= */
+
+.project-visual-canvas {
+  width: 92%;
+  height: 90%;
+  background: #0d1117;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1rem 1.2rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.term-cmd { color: #58a6ff; font-weight: 600; }
-.term-cyan { color: #38bdf8; }
-.term-purple { color: #c084fc; }
-.term-green { color: #4ade80; }
-.term-dim { color: #6e7681; }
-.term-warn { color: #fbbf24; }
-
-.term-cursor {
-  display: inline-block;
-  width: 7px;
-  height: 13px;
-  background: #38bdf8;
-  vertical-align: middle;
-  margin-left: 2px;
-  animation: cursorBlink 1s infinite step-start;
+body.dark-mode .project-visual-canvas {
+  background: #090d16;
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
-@keyframes cursorBlink {
-  50% { opacity: 0; }
+.project-visual-canvas:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 16px 36px rgba(56, 189, 248, 0.16);
 }
 
-/* PR Predictor Widget Styling */
-.pr-header-row {
+/* Header */
+.visual-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.5rem;
 }
 
-.pr-tag {
-  display: inline-flex;
+.visual-badge {
+  font-size: 0.72rem;
+  color: #8b949e;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* MCP Visual Flow */
+.mcp-visual-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto 0;
+  padding: 0.5rem 0;
+}
+
+.flow-node-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.project-visual-canvas:hover .flow-node-box {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.flow-node-icon {
+  width: 22px;
+  height: 22px;
+  color: #38bdf8;
+  display: inline-block;
+}
+
+.flow-node-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e6edf3;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.flow-wire {
+  position: relative;
+  width: 44px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.flow-packet {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: packetMove 2s infinite ease-in-out;
+}
+
+.flow-packet-reverse {
+  animation: packetMoveReverse 2s infinite ease-in-out;
+  background: #c084fc;
+  box-shadow: 0 0 10px #c084fc;
+}
+
+@keyframes packetMove {
+  0% { left: 0%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes packetMoveReverse {
+  0% { left: 100%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: 0%; opacity: 0; }
+}
+
+/* Animated Sparkline Wave */
+.telemetry-wave-container {
+  height: 32px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.telemetry-wave-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.wave-path {
+  fill: none;
+  stroke: #38bdf8;
+  stroke-width: 2;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+  animation: waveDash 3.5s linear infinite;
+}
+
+@keyframes waveDash {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* PR Radial Gauge Visual */
+.gauge-visual-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: auto 0;
+}
+
+.gauge-circle-wrap {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gauge-bg-ring {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 7;
+}
+
+.gauge-fill-ring {
+  fill: none;
+  stroke: #3fb950;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 180;
+  filter: drop-shadow(0 0 6px rgba(63, 185, 80, 0.5));
+  animation: gaugePulse 3s infinite ease-in-out;
+}
+
+@keyframes gaugePulse {
+  0%, 100% { stroke-dashoffset: 180; }
+  50% { stroke-dashoffset: 172; }
+}
+
+.gauge-text-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gauge-big-num {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3fb950;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.gauge-sub-lbl {
+  font-size: 0.6rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Visual Git Branch Line */
+.git-branch-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.git-node-row {
+  display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(35, 134, 54, 0.2);
-  border: 1px solid rgba(46, 160, 67, 0.4);
+  font-size: 0.72rem;
+  color: #c9d1d9;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.git-commit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3fb950;
+  box-shadow: 0 0 8px #3fb950;
+}
+
+.git-line-segment {
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.merge-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(63, 185, 80, 0.15);
+  border: 1px solid rgba(63, 185, 80, 0.35);
   color: #3fb950;
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 1rem;
   font-size: 0.72rem;
   font-weight: 600;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-}
-
-.diff-stat {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.72rem;
-}
-.diff-stat .added { color: #3fb950; font-weight: bold; }
-.diff-stat .removed { color: #f85149; font-weight: bold; }
-
-.friction-meter-box {
-  background: rgba(22, 27, 34, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.75rem;
-  padding: 0.65rem 0.8rem;
-  margin: 0.4rem 0;
-}
-
-.friction-label-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.72rem;
-  color: #8b949e;
-  margin-bottom: 0.4rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-}
-
-.friction-score-text {
-  color: #3fb950;
-  font-weight: 600;
-}
-
-.friction-bar-track {
-  width: 100%;
-  height: 7px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.friction-bar-fill {
-  height: 100%;
-  width: 22%;
-  background: linear-gradient(90deg, #2ea043, #56d364);
-  border-radius: 10px;
-  position: relative;
-  transition: width 0.6s ease;
-}
-
-.friction-bar-fill::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  animation: shimmerGlow 2.5s infinite;
-}
-
-@keyframes shimmerGlow {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(200%); }
-}
-
-.pr-checks-row {
-  display: flex;
-  gap: 0.4rem;
-  margin-top: 0.35rem;
-}
-
-.pr-check-pill {
-  font-size: 0.68rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
-  color: #c9d1d9;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, monospace;
 }
 
 

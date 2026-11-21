@@ -397,6 +397,9 @@ article .icon {
   flex: none !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
 }
 
 @media screen and (max-width: 900px) {
@@ -497,6 +500,44 @@ body.dark-mode .tech-pill:hover {
   display: flex;
   justify-content: center;
   padding-bottom: 0.2rem;
+}
+
+/* ThreadLore Visual Component */
+.loom-matrix-frame {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(239, 68, 68, 0.06);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.15) inset;
+}
+
+.loom-drawdown-svg {
+  width: 72px;
+  height: 72px;
+  display: block;
+}
+
+.loom-shuttle-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #f87171;
+  box-shadow: 0 0 10px #ef4444, 0 0 4px #f87171;
+  animation: shuttleScan 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes shuttleScan {
+  0% { top: 4%; opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { top: 94%; opacity: 0.3; }
 }
 
 .project-btn {
